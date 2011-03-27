@@ -33,7 +33,10 @@ Each message sent in one block has the format:
 
 The payload< consists of n attributes, seperated by ";".
 
-Each attribute has the format "<type>:<value>" or if there are multiple values associated with the attribute "<type>:<value 1>,<value 2>,...,<value x>"
+Each attribute has the format
+ "<type>:<value>" 
+or if there are multiple values associated with the attribute 
+ "<type>:<value 1>,<value 2>,...,<value x>"
 
 <b>Example:</b>
  "CURRENT|turn:0;player:RED
