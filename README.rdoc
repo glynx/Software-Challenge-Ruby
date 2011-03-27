@@ -22,10 +22,10 @@ that you can easy parse via usual string operations
 <b>Blocks:</b> In the format are several blocks that contain other messages, their format is: "BEGIN|<type>" and "END|<type>"
 The following block-types exist:
 
-(1) <b>Game</b> starts when the client conntects to the server and ends when the result is sent by the server.
-(2) <b>Board</b> is send initially when the game ist started, contains the whole board with all nodes and their neighbors
-(3) <b>GameState</b> Eeach round there is a Game state send by the server, it contains the current state of the game.
-(4) <b>Result</b> is sent when the game is finished. It contains the definition of the score fragments, the scores and their causes.
+(1) Game starts when the client conntects to the server and ends when the result is sent by the server.
+(2) Board is send initially when the game ist started, contains the whole board with all nodes and their neighbors
+(3) GameState Eeach round there is a Game state send by the server, it contains the current state of the game.
+(4) Result< is sent when the game is finished. It contains the definition of the score fragments, the scores and their causes.
 
 <b>Messages:</b>
 
