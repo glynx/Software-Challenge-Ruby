@@ -69,7 +69,7 @@ class GameState
   attr_accessor :players, :dog, :sheeps, :flowers, :dice, :state, :board, :sheeps_at_nodes, :turn
   def parse_input(elements, board)
     
-    @players = {} # 1 => Player1, 2 => Player2
+    @players = [] # 1 => Player1, 2 => Player2
     @sheeps = {}  # SheepIndex => Sheep
     @sheeps_at_nodes = {} # Node => Sheep[]
     @flowers = {} # Node => Flower

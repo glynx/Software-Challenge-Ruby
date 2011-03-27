@@ -1,10 +1,10 @@
 require 'proxy_client'
 require 'socket'
-require 'board'
-require 'game_state'
-require 'distances'
-require 'abstract_logic'
-require 'simple_logic'
+require 'lib/board'
+require 'lib/game_state'
+require 'lib/distances'
+require 'lib/abstract_logic'
+require 'logic/simple_logic'
 
 class SitClient
 

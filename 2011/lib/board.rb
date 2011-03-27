@@ -51,7 +51,7 @@ class Board
 
 
   def initialize(nodes)
-    @nodes = {}
+    @nodes = []
     for node in nodes
       @nodes[node['ID'].to_i] = Node.new(node['type'], node['ID'], node['neighbours'])
     end

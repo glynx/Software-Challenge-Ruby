@@ -62,7 +62,7 @@ If you would like to use the proxy from ruby, you can:
  require 'proxy_client'
 
 If you would like to use your client from the commandline, just require your logic_class in the sit_client.rb and use use 
- ruby client.rb --logic_class MyLogicClass <any args for the proxy you would like to use>
+ ruby client_starter.rb --logic_class MyLogicClass <any args for the proxy you would like to use>
 
 ==== Manually Starting your Client from the IRB
 At first you should require the sit_client.
@@ -96,6 +96,8 @@ For more information about the possibilities look at the Classes.
 
 == TODO 
 * The xml proxy should be able to communicate via pipes!
-* Use arrays instead of hashes in the game_state 
+
+== Known Issues
+* When terminating the client while connected to the server, the next time the one or two of the players in the GameState are lost..seems to be a issue of the server, causes the client to crash!
 
 
