@@ -21,16 +21,14 @@ that you can easy parse via usual string operations
 
 <b>Blocks:</b> In the format are several blocks that contain other messages, their format is: "BEGIN|<type>" and "END|<type>"
 The following block-types exist:
-
-(1) Game starts when the client conntects to the server and ends when the result is sent by the server.
-(2) Board is send initially when the game ist started, contains the whole board with all nodes and their neighbors
-(3) GameState Eeach round there is a Game state send by the server, it contains the current state of the game.
-(4) Result< is sent when the game is finished. It contains the definition of the score fragments, the scores and their causes.
+* <b>Game</b> starts when the client conntects to the server and ends when the result is sent by the server.
+* <b>Board</b> is send initially when the game ist started, contains the whole board with all nodes and their neighbors
+* <b>GameState</b> Eeach round there is a Game state send by the server, it contains the current state of the game.
+* <b>Result</b> is sent when the game is finished. It contains the definition of the score fragments, the scores and their causes.
 
 <b>Messages:</b>
 
 Each message sent in one block has the format:
-
  "<type of the message>|<payload>"
 
 The payload< consists of n attributes, seperated by ";".
@@ -38,11 +36,9 @@ The payload< consists of n attributes, seperated by ";".
 Each attribute has the format "<type>:<value>" or if there are multiple values associated with the attribute "<type>:<value 1>,<value 2>,...,<value x>"
 
 <b>Example:</b>
-
  "CURRENT|turn:0;player:RED
 
 The payload can be empty, for example for a move request:
-
  "MOVE_REQUEST|"
 
 
@@ -55,33 +51,33 @@ When you want to send the reply to a move request, your client has to send a mes
 The proxy client will then send this message in XML format to the server.
 
 === Usage
-You can use proxy client standalone via "./xml_proxy.rb <ARGS>" or  "ruby xml_proxy.rb <ARGS>"
+You can use proxy client standalone via <i>"./xml_proxy.rb <ARGS>"</i> or  <i>"ruby xml_proxy.rb <ARGS>"</i>
 
 There are several arguments accepted by the xml_proxy, use "--help" for more information about the arguments.
 
 If you would like to use the proxy from ruby, you can:
-
-require 'proxy_client'
+ require 'proxy_client'
 
 Now you can use the ProxyClient as you like:
 
 args contains the setting the proxy should be set up with, like :host, :port, :verbose ... (for all arguments look at xml_proxy.rb)
-"ProxyClient.new" or "ProxyClient.new(args)"
-After this you can use ".start" to start the ProxyClient and the ProxyServer.
-To stop the ProxyClient you can use ".finsished!"
+<i>"ProxyClient.new"</i> or <i>"ProxyClient.new(args)"</i>
+After this you can use <i>".start"</i> to start the ProxyClient and the ProxyServer.
+To stop the ProxyClient you can use <i>".finsished!"</i>
 
 == Developing a Client in Ruby
 The SitClient provided in the "sit_client.rb" is a full featured Ruby simple client, that uses the XML Proxy to communicate with the server.
 It supports the integration of own logic. For building a own logic, just extend AbstractLogic and initialize the SitLogic with the logic you
-would like to use: "SitClient.new(MyNewLogic)"
+would like to use: 
+ "SitClient.new(MyNewLogic)"
 Your logic has to respond_to the move_requested method, which should return an array for [sheep,target] where target is the target-node 
 where the sheep should move to. (You can either use the indexes of the sheeps and nodes or the objects themselve) 
 
-To find your move you can use @board,@state and @client
+To find your move you can use <b>@board</b>,<b>@state</b> and <b>@client</b>
 
 This are the buildin classes:
-<b>Board</b> is the board of nodes that classify the field
-<b>State</b> is the current game_state, consisting of sheeps, dice...
+*<b>Board</b> is the board of nodes that classify the field
+*<b>State</b> is the current game_state, consisting of sheeps, dice...
 
 For more information about the possibilities look at the Classes.
 
