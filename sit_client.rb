@@ -12,8 +12,9 @@ class SitClient
   attr_accessor :state
   attr_accessor :logic_class
 
-  def initialize(logic_class = SimpleLogic)
-    @proxy = ProxyClient.new
+  def initialize(logic_class = SimpleLogic, options = {})
+    @proxy = ProxyClient.new options
+    @options = @proxy.options
     @logic_class = logic_class
     @board = []
   end
@@ -43,7 +44,7 @@ class SitClient
   def connect
     begin
       puts "Client connecting"
-      @socket = TCPSocket.new "127.0.0.1", 14000
+      @socket = TCPSocket.new @options[:host], @options[:proxy_port]
       @connected = true
       puts "Client conected"
     rescue

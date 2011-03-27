@@ -105,8 +105,8 @@ class ProxyClient
    write "</room>"
   end
 
-  def join(args = {:gameType => "swc_2011_schaefchen_im_trockenen", :reservation => nil})
-    if args[:reservation]
+  def join(args = {:gameType => "swc_2011_schaefchen_im_trockenen"})
+    if @options[:reservation]
       write %{<joinPrepared reservationCode="#{args[:reservation]}/>}
     else
       write %{<join gameType="#{args[:gameType]}"/>}
