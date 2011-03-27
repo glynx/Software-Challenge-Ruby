@@ -61,9 +61,11 @@ If you would like to use the proxy from ruby, you can:
 Now you can use the ProxyClient as you like:
 
 args contains the setting the proxy should be set up with, like :host, :port, :verbose ... (for all arguments look at xml_proxy.rb)
+
 <i>"ProxyClient.new"</i> or <i>"ProxyClient.new(args)"</i>
+
 After this you can use <i>".start"</i> to start the ProxyClient and the ProxyServer.
-To stop the ProxyClient you can use <i>".finsished!"</i>
+To stop the ProxyClient you can use <i>".finished!"</i>
 
 == Developing a Client in Ruby
 The SitClient provided in the "sit_client.rb" is a full featured Ruby simple client, that uses the XML Proxy to communicate with the server.
@@ -76,8 +78,8 @@ where the sheep should move to. (You can either use the indexes of the sheeps an
 To find your move you can use <b>@board</b>,<b>@state</b> and <b>@client</b>
 
 This are the buildin classes:
-*<b>Board</b> is the board of nodes that classify the field
-*<b>State</b> is the current game_state, consisting of sheeps, dice...
+* <b>Board</b> is the board of nodes that classify the field
+* <b>State</b> is the current game_state, consisting of sheeps, dice...
 
 For more information about the possibilities look at the Classes.
 
