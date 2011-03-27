@@ -61,9 +61,12 @@ There are several arguments accepted by the xml_proxy, use "--help" for more inf
 If you would like to use the proxy from ruby, you can:
  require 'proxy_client'
 
-Now you can use the ProxyClient as you like:
+If you would like to use your client from the commandline, just require your logic_class in the sit_client.rb and use use 
+ ruby client.rb --logic_class MyLogicClass <any args for the proxy you would like to use>
 
-args contains the setting the proxy should be set up with, like :host, :port, :verbose ... (for all arguments look at xml_proxy.rb)
+==== Manually Starting your Client from the IRB
+At first you should require the sit_client.
+After this you can use the args hash which contains the setting the proxy should be set up with, like :host, :port, :verbose ... (for all arguments look at xml_proxy.rb), and pass it to the new Method of the ProxyClient
 
 <i>"ProxyClient.new"</i> or <i>"ProxyClient.new(args)"</i>
 
