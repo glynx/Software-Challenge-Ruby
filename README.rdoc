@@ -96,8 +96,6 @@ For more information about the possibilities look at the Classes.
 
 == TODO 
 * The xml proxy should be able to communicate via pipes!
-* Implement parameters like the reserveration token for the SitClient
-* Starting the sit client via the console not only via irb!
 * Use arrays instead of hashes in the game_state 
 
 
