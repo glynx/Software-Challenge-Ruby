@@ -7,7 +7,7 @@ For more info look at http://www.software-challenge.de
 = Software Challenge Ruby Integration
 The Software Challenge offers a Client-Lib for Java and for Delphi. 
 To extend the possible usage of programming languages, this project offers an implementation in Ruby.
-It consists of 2 parts
+It consists of 2 parts, the XML-Proxy Client and the SitClient.
 
 == XML-Proxy Client
 For the Server <=> Client communication the Software Challenge uses a XML based protocol (objects are serialized via XStream)
@@ -69,6 +69,11 @@ args contains the setting the proxy should be set up with, like :host, :port, :v
 
 After this you can use <i>".start"</i> to start the ProxyClient and the ProxyServer.
 To stop the ProxyClient you can use <i>".finished!"</i>
+
+=== Connecting to the Proxy
+The Proxy opens a Socket which your Client can connect to. This socket is per default on port 14000 but via the -pp parameter this port
+can be changed. Using any programming language you can connect to this port with your client, receive the messages and send moves to the 
+server using the format described above!
 
 == Developing a Client in Ruby
 The SitClient provided in the "sit_client.rb" is a full featured Ruby simple client, that uses the XML Proxy to communicate with the server.
