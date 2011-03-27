@@ -21,6 +21,7 @@ that you can easy parse via usual string operations
 
 <b>Blocks:</b> In the format are several blocks that contain other messages, their format is: "BEGIN|<type>" and "END|<type>"
 The following block-types exist:
+
 (1) <b>Game</b> starts when the client conntects to the server and ends when the result is sent by the server.
 (2) <b>Board</b> is send initially when the game ist started, contains the whole board with all nodes and their neighbors
 (3) <b>GameState</b> Eeach round there is a Game state send by the server, it contains the current state of the game.
@@ -30,7 +31,7 @@ The following block-types exist:
 
 Each message sent in one block has the format:
 
-"<type of the message>|<payload>"
+ "<type of the message>|<payload>"
 
 The payload< consists of n attributes, seperated by ";".
 
@@ -38,17 +39,19 @@ Each attribute has the format "<type>:<value>" or if there are multiple values a
 
 <b>Example:</b>
 
-"CURRENT|turn:0;player:RED
+ "CURRENT|turn:0;player:RED
 
 The payload can be empty, for example for a move request:
 
-"MOVE_REQUEST|"
+ "MOVE_REQUEST|"
 
 
 <b>Sending a Move to the server</b>
 
 When you want to send the reply to a move request, your client has to send a message of the format:
-"MOVE|sheep:<sheep id>;<target-node id>"
+
+ "MOVE|sheep:<sheep id>;<target-node id>"
+
 The proxy client will then send this message in XML format to the server.
 
 === Usage
